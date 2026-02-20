@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Gallery Preview Modal Styles */
+.preview-modal .ant-modal-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.preview-modal .ant-modal-body {
+  padding: 0;
+}
+
+.preview-modal .ant-modal-close {
+  color: white;
+}
+
+.preview-modal .ant-image-preview-operations {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Gallery Preview Styles */
+.ant-image-preview-img {
+  touch-action: pan-y pinch-zoom !important;
+}
+
+.ant-image-preview-operations-wrapper {
+  touch-action: none !important;
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 1001 !important;
+}
+
+.ant-image-preview-operations {
+  padding: 12px !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.ant-image-preview-operations .ant-btn {
+  color: white !important;
+  font-size: 20px !important;
+  padding: 8px !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ant-image-preview-operations .ant-btn:hover {
+  color: #1890ff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-image-preview-operations .anticon {
+  font-size: 24px !important;
+}
+
+.ant-image-preview-mask {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Hide default navigation arrows */
+.ant-image-preview-switch-left,
+.ant-image-preview-switch-right {
+  display: none !important;
+}
+
+/* Custom navigation buttons */
+.custom-nav-button {
+  z-index: 1001;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.custom-nav-button:hover {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .custom-nav-button {
+    display: none !important;
+  }
+  
+  .ant-image-preview-operations {
+    padding: 8px !important;
+  }
+  
+  .ant-image-preview-operations .ant-btn {
+    padding: 6px !important;
+  }
+  
+  .ant-image-preview-operations .anticon {
+    font-size: 20px !important;
+  }
+}
+
+/* Gallery Card Styles */
+.gallery-card {
+  transition: all 0.3s ease;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-card img {
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Hide default Ant Design card styles */
+.gallery-card.ant-card {
+  border: none;
+}
+
+.gallery-card.ant-card .ant-card-body {
+  padding: 0;
+}
+
+.gallery-card .ant-card-meta-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
